@@ -128,8 +128,8 @@ service pcscd stop
 service xfs stop
 service vncserver stop
 service mysqld stop
-service haldaemon stop
-service messagebus stop
+#service haldaemon stop
+#service messagebus stop
 service dropbox stop
 service oddjobd stop
 service sshd stop
@@ -156,8 +156,8 @@ chkconfig pcscd off
 chkconfig xfs off
 chkconfig vncserver off
 chkconfig mysqld off
-chkconfig haldaemon off
-chkconfig messagebus off
+#chkconfig haldaemon off
+#chkconfig messagebus off
 chkconfig dropbox off
 chkconfig oddjobd off
 chkconfig sshd off
