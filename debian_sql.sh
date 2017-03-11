@@ -48,10 +48,10 @@ iptables -A INPUT -m state --state established,related -j ACCEPT
 
 # Remember all ip connections and send excessive requests to blacklist
 iptables -A INPUT -m state --state NEW -m recent --set
-iptables -A INPUT ! -s 172.20.240.0/23 -m recent --update --seconds 10 --hitcount 20 -j REDTEAM
+iptables -A INPUT ! -s 172.20.240.0/22 -m recent --update --seconds 10 --hitcount 20 -j REDTEAM
 
 # Allow mysql traffic
-iptables -A INPUT -p tcp --dport 3306 -s 172.20.241.40 -m state --state new -j ACCEPT
+iptables -A INPUT -p tcp --dport 3306 -s 172.20.240.0/22 -m state --state new -j ACCEPT
 
 # Allow ssh traffic
 iptables -A INPUT -p tcp --dport 22 -s 172.20.240.0/22 -m state --state new -j ACCEPT
